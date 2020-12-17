@@ -1,0 +1,42 @@
+.App-header {
+  /* background-color: #282c34; */
+  /* color: white; */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid black;
+}
+
+.App-header .left-box {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.App-header .right-box {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.App-header .right-box .right-box {
+  align-items: center;
+  /* background-color: blueviolet; */
+  width: 80px;
+}
+
+.App-header .right-box .left-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: rgb(226, 43, 67); */
+  width: 180px;
+}
+
+.App-title {
+  float: left;
+  padding-top: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #61dafb;
+}
