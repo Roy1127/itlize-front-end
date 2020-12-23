@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import logo from "../assets/images/logo.svg"
+import * as actions from '../redux/actions/authAction';
 
 import { Link } from "react-router-dom";
 import { Avatar, Dropdown, Menu } from "antd";
@@ -14,13 +15,27 @@ import '../styles/App.css'
 export const TopBar = (props) => {
   console.log(props);
 
+  const handleMenuClick = e => {
+    console.log('click', e);
+    if (e.key === "4") {
+      console.log("gg");
+      props.onLogout(props.authReducer.token);
+    }
+  };
+
   const menu = (
-    <Menu theme="dark">
+    <Menu theme="dark" onClick={handleMenuClick}>
       <Menu.Item key="1">
-        {props.authReducer.user.title}
+        {props.authReducer.user.username}
       </Menu.Item>
       <Menu.Item key="2">
         {'Member since ' + props.authReducer.user.creationTime}
+      </Menu.Item>
+      <Menu.Item key="3">
+        Profile
+      </Menu.Item>
+      <Menu.Item key="4">
+        Logout
       </Menu.Item>
     </Menu>
   );
@@ -54,10 +69,10 @@ export const TopBar = (props) => {
                 icon={<UserOutlined />}
               />
           }
-          <span style={{ paddingLeft: "15px" }}>{props.authReducer.user.title}</span>
+          <span style={{ paddingLeft: "15px", fontSize: "3ex", fontFamily:"monospace", fontWeight:"bold"}}>{props.authReducer.user.username}</span>
         </div>
         <div className="right-box">
-          <QuestionCircleOutlined />
+          <QuestionCircleOutlined style={{ fontSize: '30px' }}/>
         </div>
       </div>
     </div>
@@ -69,9 +84,11 @@ const mapStateToProps = (state) => ({
   authReducer: state.authReducer
 })
 
-const mapDispatchToProps = {
-
-}
+const mapDispatchToProps = dispatch => {
+  return {
+    onLogout: values => dispatch(actions.logout(values)),
+  };
+};
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopBar)

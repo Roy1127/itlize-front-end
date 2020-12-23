@@ -1,0 +1,39 @@
+.Resource {
+  /* background-color:burlywood; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-top: 7%;
+  max-height: 100%;
+}
+
+.Resource .left-box {
+  width: 20%;
+  /* background-color:aqua; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+
+}
+
+.Resource .right-box {
+  width: 80%;
+  /* background-color: blueviolet; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+
+}
+
+.Resource .right-box .header-box{
+  width: 91.5%;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+

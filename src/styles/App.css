@@ -1,6 +1,11 @@
 @import 'TopBar.css';
 @import 'Login.css';
 @import 'Main.css';
+@import 'Resource.css';
+@import 'Register.css';
+@import 'Project.css';
+@import 'ProjectResource.css';
+@import 'ProjectProject.css';
 
 .App {
   text-align: center;

@@ -6,7 +6,7 @@ const initialState = {
   error: null,
   token: null,
   userId: -1,
-  user: { username: "Roy", title: "", creationTime: "" }
+  user: { username: "", title: "", creationTime: "" }
 
 };
 
@@ -28,11 +28,24 @@ const authFail = (state, action) => {
   });
 };
 
+const authLogout = (state, action) => {
+  return updateObject(state, {
+    token: null,
+    userId: -1,
+    user: {
+      username: "", title: "", creationTime: ""
+    },
+    error: null,
+    isAuthenticated: false,
+  });
+};
+
 export const authReducer = (state = initialState, action) => {
   const { isAuthenticated, user } = state /* action.payload */;
   switch (action.type) {
     case actionTypes.AUTH_SUCCESS: return authSuccess(state, action);
     case actionTypes.AUTH_FAIL: return authFail(state, action);
+    case actionTypes.AUTH_LOGOUT: return authLogout(state, action);
     case actionTypes.LOGIN:
       return isAuthenticated ? user : null;
     default:

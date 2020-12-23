@@ -28,10 +28,32 @@ export const authFail = (error) => {
   };
 };
 
-export const logout = () => {
-  localStorage.removeItem("token");
-  localStorage.removeItem("expirationDate");
-  localStorage.removeItem("userId");
+export const logout = (token) => {
+  const options = {
+    url: `${API_ROOT}/logoff`,
+    method: "GET",
+    headers: {
+      Accept: "*/*",
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + token
+    },
+    withCredentials: true,
+  };
+
+  axios(options)
+    .then((response) => {
+      if (response.data.success) {
+        return response.data;
+      }
+      throw new Error(response.statusText);
+    })
+    .then((data) => {
+      console.log(data.message);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+
   return {
     type: actionTypes.AUTH_LOGOUT,
   };
@@ -47,6 +69,7 @@ export const checkAuthTimeout = (expirationTime) => {
 
 export const auth = (values) => {
   return (dispatch) => {
+    
     const userFormData = {
       username: values.username,
       password: values.password

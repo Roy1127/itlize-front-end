@@ -1,0 +1,19 @@
+.ProjectProject {
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 7%; */
+  max-height: 100%;
+  width: 47%;
+}
+
+.ProjectProject .header-box {
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.ProjectProject .bot-box {
+    /* background-color:red; */
+}

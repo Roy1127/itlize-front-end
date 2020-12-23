@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Link } from "react-router-dom";
-import { Form, Input, Button, message } from 'antd';
+import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux'
 import * as actions from '../redux/actions/authAction';
@@ -12,10 +12,8 @@ export const Login = (props) => {
     props.onAuth(values);
   };
 
-
-
   return (
-    <>
+    <div style={{marginLeft:"35%", width:"35%"}}>
       <h1 className="login-title">Login</h1>
       <Form
         name="normal_login"
@@ -59,10 +57,10 @@ export const Login = (props) => {
           <Button type="primary" htmlType="submit" className="login-form-button">
             Login
         </Button>
-        Or <Link to="register">register now!</Link>
+        Or <Link to="/register">register now!</Link>
         </Form.Item>
       </Form>
-    </>
+    </div>
   )
 }
 

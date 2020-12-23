@@ -1,0 +1,44 @@
+.Project {
+  /* background-color: burlywood; */
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: flex-c; */
+  flex-direction: row;
+  /* margin-top: 5%; */
+}
+
+.Project .left-box {
+  width: 20%;
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+.Project .right-box {
+  width: 80%;
+  /* background-color: blueviolet; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Project .right-box .upper-box {
+  width: 97%;
+  /* background-color: blueviolet; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.Project .right-box .bot-box{
+  width: 100%;
+  /* background-color: blueviolet; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-around;
+  flex-direction: row;
+}
